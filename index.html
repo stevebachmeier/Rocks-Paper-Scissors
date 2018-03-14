@@ -11,16 +11,54 @@
 
 <body>
 	<script>
+		<!-- Computer's play function -->
 		function computerPlay() {
 			compRand = Math.floor(Math.random()*3+1)
 			if (compRand == 1) {
-				compPlay = "Rock";
+				compPlay = "rock";
 			} else if (compRand == 2) {
-				compPlay = "Paper";
+				compPlay = "paper";
 			} else {
-				compPlay = "Scissors";
+				compPlay = "scissors";
 			}
 			<!-- return compPlay -->
+		}
+		
+		<!-- Play a round -->
+		function playRound(playerSelection,computerSelection) {
+			strWin = "You win!"
+			strLose = "You lose!"
+			strTie = "It's a tie!"
+			strRvP = "Paper beats rock."
+			strRvS = "Rock beats scissors."
+			strPvS = "Scissors beats paper."
+			
+			if (playerSelection.toLowerCase() == "rock") {
+				if (computerSelection == "rock") {
+					result = strTie;
+				} else if (computerSelection == "paper") {
+					result = strLose + " " + strRvP;
+				} else {
+					result = strWin + " " + strRvS;
+				}
+			} else if (playerSelection.toLowerCase() == "paper") {
+				if (computerSelection == "rock") {
+					result = strWin + " " + strRvP;
+				} else if (computerSelection == "paper") {
+					result = strTie;
+				} else {
+					result = strLose + " " + strPvS;
+				}
+			} else {
+				if (computerSelection == "rock") {
+					result = strLose + " " + strRvS;
+				} else if (computerSelection == "paper") {
+					result = strWin + " " + strPvS;
+				} else {
+					result = strTie;
+				}
+			}
+		console.log(result);
 		}
 	</script>
 
