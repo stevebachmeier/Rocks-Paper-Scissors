@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+	<title>Rocks, Paper, Scissors</title>
+	<link rel="stylesheet" href="styles/reset.css">
+	<link rel="stylesheet" href="styles/style.css">
+	<!-- <link rel="shortcut icon" type="image/png" href="./pictures/gsa_shadowed_144dp.png"> -->
+</head>
+
+<body>
+	<script>
+		function computerPlay() {
+			compRand = Math.floor(Math.random()*3+1)
+			if (compRand == 1) {
+				compPlay = "Rock";
+			} else if (compRand == 2) {
+				compPlay = "Paper";
+			} else {
+				compPlay = "Scissors";
+			}
+			<!-- return compPlay -->
+		}
+	</script>
+
+</body>
+</html>
