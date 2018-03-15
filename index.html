@@ -6,20 +6,34 @@
 	<title>Rocks, Paper, Scissors</title>
 	<link rel="stylesheet" href="styles/reset.css">
 	<link rel="stylesheet" href="styles/style.css">
-	<!-- <link rel="shortcut icon" type="image/png" href="./pictures/gsa_shadowed_144dp.png"> -->
+	<!-- <link rel="shortcut icon" type="image/png" href="./pictures/xxx.png"> -->
 </head>
 
 <body>
 	<script>
+		// Create variables
+		let compRand;
+		let compPlay;
+		let playerPlay;
+		let strWin;
+		let strLose;
+		let strTie;
+		let strRvP;
+		let strRvS;
+		let strPvS;
+		let result;
+		let compPoints;
+		let playerPoints;
+		
 		// Ask if player wants to play
 		if (confirm("Do you want to play a 5-round game of Rock, Paper, Scissors?")) {
 			game();
-		}
+		} // END IF
 		
 	
 		// Computer's play function
 		function computerPlay() {
-			compRand = Math.floor(Math.random()*3+1)
+			compRand = Math.floor(Math.random()*3+1);
 			if (compRand == 1) {
 				compPlay = "rock";
 			} else if (compRand == 2) {
@@ -34,12 +48,12 @@
 		
 		// Create a function that plays a single round
 		function playRound(playerSelection,computerSelection) {
-			strWin = "You win!"
-			strLose = "You lose!"
-			strTie = "It's a tie!"
-			strRvP = "Paper beats rock."
-			strRvS = "Rock beats scissors."
-			strPvS = "Scissors beats paper."
+			strWin = "You win!";
+			strLose = "You lose!";
+			strTie = "It's a tie!";
+			strRvP = "Paper beats rock.";
+			strRvS = "Rock beats scissors.";
+			strPvS = "Scissors beats paper.";
 			
 			if (playerSelection.toLowerCase() == "rock") {
 				if (computerSelection == "rock") {
@@ -73,7 +87,9 @@
 		function playerPrompt() {
 			playerPlay = prompt("Input 'rock,' 'paper,' or 'scissors.'");
 			// Check for valid input
-			while ((playerPlay.toLowerCase() != "rock") && (playerPlay.toLowerCase() != "paper") && (playerPlay.toLowerCase() != "scissors")) {
+			while ((playerPlay.toLowerCase() != "rock") &&
+					(playerPlay.toLowerCase() != "paper") &&
+					(playerPlay.toLowerCase() != "scissors")) {
 				playerPlay = prompt("Please input only 'rock,' 'paper,' or 'scissors!'");
 			} // END WHILE
 		} // END FUNCTION
@@ -103,7 +119,14 @@
 					alert("ERROR");
 				} // END IF
 			} // END FOR
-			alert("You have " + playerPoints + " points and the computer has " + compPoints + " points.");
+			if (playerPoints > compPoints) {
+				alert("You win! The score is " + playerPoints + " to " + compPoints + ".");
+			} else if (playerPoints < compPoints) {
+				alert("You lose! The score is " + playerPoints + " to " + compPoints + ".");
+			} else {
+				alert("It's a tie! The score is " + playerPoints + " to " + compPoints + ".");
+			} // END IF
+
 		} // END FUNCTION
 		
  	</script>
