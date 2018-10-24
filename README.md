@@ -1,4 +1,4 @@
-"# Rocks-Paper-Scissors" 
+# Rocks Paper Scissors
 
 This is the Rocks, Paper, Scissors project from The Odin Project, Web Development 101.
 
